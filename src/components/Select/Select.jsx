@@ -11,6 +11,7 @@ function Select({ Id, label, options, required, valueInput, setValueInput }) {
         onChange={(e) => {
           handleValue(e);
         }}
+        value={valueInput}
         required={required}
         id={Id}
       >

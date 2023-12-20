@@ -4,17 +4,7 @@ import Select from "../Select/Select";
 import Button from "../Button/Button";
 import { useState } from "react";
 
-function Formulario() {
-  const options = [
-    { value: "programação", label: "Programação" },
-    { value: "front-end", label: "Front-End" },
-    { value: "devops", label: "DevOps" },
-    { value: "data-science", label: "Data Science" },
-    { value: "ux-design", label: "Ux e Design" },
-    { value: "mobile", label: "Mobile" },
-    { value: "inovacao-gestao", label: "Inovação e Gestão" },
-  ];
-
+function Formulario({ cadastroColaborador, times }) {
   const [nome, setNome] = useState();
   const [cargo, setCargo] = useState();
   const [imagem, setImage] = useState();
@@ -22,7 +12,12 @@ function Formulario() {
 
   const submitForm = (e) => {
     e.preventDefault();
-    console.log(e.value);
+    // console.log(`${nome} | ${cargo} | ${imagem} | ${time}`);
+    cadastroColaborador({ nome, cargo, imagem, time });
+    setCargo("");
+    setNome("");
+    setImage("");
+    setTime("");
   };
 
   return (
@@ -64,7 +59,7 @@ function Formulario() {
           label="Time"
           Id="Time"
           valueInput={time}
-          options={options}
+          options={times}
           setValueInput={(valueInput) => setTime(valueInput)}
         />
 
