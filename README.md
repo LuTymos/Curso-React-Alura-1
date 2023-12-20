@@ -10,5 +10,3 @@ O curso foi feito na Alura, onde foram abordados:
   <li>Renderização condicional</li>
 </ul>
 
-Entre outros pontos.
-
