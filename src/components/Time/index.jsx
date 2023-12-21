@@ -14,6 +14,7 @@ const Time = ({ nome, primaryColor, secondaryColor, colaboradores }) => {
               imagem={colaborador.imagem}
               time={colaborador.time}
               key={colaborador.nome}
+              primaryColor={primaryColor}
             />
           ))}
         </div>
