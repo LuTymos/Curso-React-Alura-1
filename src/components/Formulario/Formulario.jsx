@@ -12,7 +12,6 @@ function Formulario({ cadastroColaborador, times }) {
 
   const submitForm = (e) => {
     e.preventDefault();
-    // console.log(`${nome} | ${cargo} | ${imagem} | ${time}`);
     cadastroColaborador({ nome, cargo, imagem, time });
     setCargo("");
     setNome("");
