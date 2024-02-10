@@ -3,14 +3,21 @@ import Input from "../input/Input";
 import Select from "../Select/Select";
 import Button from "../Button/Button";
 import { useState } from "react";
+import { IColaborador } from "../../shared/interfaces/iColaborador";
+import { ITime } from "../../shared/interfaces/iTime";
 
-function Formulario({ cadastroColaborador, times }) {
-  const [nome, setNome] = useState();
-  const [cargo, setCargo] = useState();
-  const [imagem, setImage] = useState();
-  const [time, setTime] = useState();
+interface FormularioProps {
+  cadastroColaborador: (colaborador: IColaborador) => void;
+  times: ITime[];
+}
 
-  const submitForm = (e) => {
+function Formulario({ cadastroColaborador, times }: FormularioProps) {
+  const [nome, setNome] = useState("");
+  const [cargo, setCargo] = useState("");
+  const [imagem, setImage] = useState("");
+  const [time, setTime] = useState("");
+
+  const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     cadastroColaborador({ nome, cargo, imagem, time });
     setCargo("");
