@@ -1,15 +1,26 @@
+import React from "react";
 import "./Input.css";
+
+interface InputProps {
+  type: string;
+  label: string;
+  placeholder?: string;
+  Id: string;
+  required?: boolean;
+  valueInput: string;
+  setValueInput: (valor: string) => void;
+}
 
 function Input({
   type,
   label,
   placeholder,
   Id,
-  required,
+  required = false,
   valueInput,
   setValueInput,
-}) {
-  const handleValue = (e) => {
+}: InputProps) {
+  const handleValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValueInput(e.target.value);
   };
 
