@@ -25,7 +25,7 @@ function Input({
   };
 
   return (
-    <div className="Input">
+    <div className={`Input campo-${type}`}>
       <label htmlFor={Id}>{label}</label>
       <input
         required={required}
