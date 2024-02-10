@@ -1,6 +1,16 @@
+import { IColaborador } from "../../shared/interfaces/iColaborador";
 import "./index.css";
 
-const Colaborador = ({ nome, cargo, imagem, primaryColor }) => {
+interface ColaboradorProps extends IColaborador {
+  primaryColor: string;
+}
+
+const Colaborador = ({
+  nome,
+  cargo,
+  imagem,
+  primaryColor,
+}: ColaboradorProps) => {
   return (
     <div className="colaborador">
       <div className="cabecalho" style={{ backgroundColor: primaryColor }}>
