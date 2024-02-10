@@ -1,7 +1,23 @@
 import "./Select.css";
 
-function Select({ Id, label, options, required, valueInput, setValueInput }) {
-  const handleValue = (e) => {
+interface SelectProps {
+  Id: string;
+  label: string;
+  options: { value: string; label: string }[];
+  required: boolean;
+  valueInput: string;
+  setValueInput: (value: string) => void;
+}
+
+function Select({
+  Id,
+  label,
+  options,
+  required,
+  valueInput,
+  setValueInput,
+}: SelectProps) {
+  const handleValue = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setValueInput(e.target.value);
   };
   return (
