@@ -4,6 +4,7 @@ import Formulario from "./components/Formulario/Formulario";
 import Banner from "./components/banner/Banner";
 import Time from "./components/Time";
 import Rodape from "./components/Footer";
+import { IColaborador } from "./shared/interfaces/iColaborador";
 
 function App() {
   const times = [
@@ -51,15 +52,15 @@ function App() {
     },
   ];
 
-  const [colaboradores, setColaboradores] = useState([]);
+  const [colaboradores, setColaboradores] = useState<IColaborador[]>([]);
 
-  const novoColaborador = (colaborador) => {
+  const novoColaborador = (colaborador: IColaborador) => {
     setColaboradores([...colaboradores, colaborador]);
   };
 
   return (
     <div className="App">
-      <Banner />
+      <Banner imagem={"banner"} alt={"Banner Principal do Organico"} />
       <Formulario
         cadastroColaborador={(colaborador) => novoColaborador(colaborador)}
         times={times}
